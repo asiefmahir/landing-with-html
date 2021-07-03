@@ -1,0 +1,19 @@
+.features {
+  padding: 50px 0;
+  background: #eaeaea;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > div {
+      display: flex;
+      align-items: center;
+    }
+    h4 {
+      font-weight: bold;
+      font-size: 20px;
+      color: $textColor;
+      margin-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.card {
+  background-color: white;
+  position: relative;
+  box-shadow: 0 0 30px rgba($color: #172475, $alpha: 0.1);
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+
+  > a {
+    margin: -20px;
+    display: block;
+    padding: 20px;
+    &:hover {
+      .card__title h3 {
+        color: $primaryColor;
+      }
+    }
+  }
+
+  &.card--step {
+    background-color: $lightBgGrey;
+    box-shadow: none;
+    text-align: center;
+    margin-top: 165px;
+  }
+  &.card--category {
+    background-color: rgba($color: $primaryColor, $alpha: 0.1);
+    box-shadow: none;
+    text-align: center;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: rgba($color: $primaryColor, $alpha: 1);
+      .card__title h3 {
+        color: white !important;
+      }
+    }
+  }
+  &.card--recipe {
+    padding: 30px;
+    padding-bottom: 20px;
+    border: 2px dashed $primaryColor;
+    .card__image {
+      margin: 0;
+      margin-bottom: 30px;
+      img {
+        height: 260px;
+      }
+    }
+  }
+}
+
+.card__image {
+  margin: -20px -20px 20px;
+  img {
+    border-radius: 5px 5px 0 0;
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .card--step & {
+    margin: 0;
+    figure {
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url(../images/step-img-bg.svg) no-repeat center;
+      margin: -155px auto 0;
+    }
+    img {
+      height: 145px;
+      width: auto;
+    }
+  }
+  .card--category & {
+    margin: 0;
+    figure {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url(../images/category-img-bg.svg) no-repeat center;
+      background-size: contain;
+      margin: -170px auto 0;
+    }
+    img {
+      height: 150px;
+      width: auto;
+    }
+  }
+}
+
+.card__title {
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: $darkBlue;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    .card--step &,
+    .card--category & {
+      margin-top: 30px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.card__content {
+  color: $lightTextColor;
+  .card--step &,
+  .card--category & {
+    font-size: 20px;
+  }
+}

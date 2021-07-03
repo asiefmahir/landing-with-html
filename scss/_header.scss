@@ -1,0 +1,142 @@
+.header {
+  padding: 30px 0;
+  box-shadow: 0 10px 20px rgba($color: $primaryColor, $alpha: 0.1);
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__logo {
+  img {
+    height: 60px;
+    @include maxBreakpoint($tabletLarge) {
+      height: 45px;
+    }
+  }
+}
+
+.header__navbar {
+  margin: 0 auto;
+  ul {
+    display: flex;
+    align-items: center;
+    li {
+      padding-right: 38px;
+      &:last-child {
+        padding-right: 0;
+      }
+      a {
+        color: $lightTextColor;
+        font-size: 20px;
+        transition: 0.3s;
+        &:hover {
+          color: $primaryColor;
+        }
+        @include maxBreakpoint($tabletLarge) {
+          display: block;
+          padding: 20px;
+        }
+      }
+      @include maxBreakpoint($tabletLarge) {
+        padding: 0;
+        width: 100%;
+      }
+    }
+    @include maxBreakpoint($tabletLarge) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  @include maxBreakpoint($tabletLarge) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    z-index: 9;
+    box-shadow: 5px 5px 20px rgba($color: $primaryColor, $alpha: .2);
+    transform: translateX(-100%);
+    transition: .3s;
+
+    &.active {
+      transform: none;
+    }
+  }
+}
+
+.header__buttons {
+  display: flex;
+  align-items: center;
+
+  @include maxBreakpoint($tabletLarge) {
+    margin-left: auto;
+  }
+}
+
+.header__cart-btn {
+  a {
+    background-color: rgba($color: $primaryColor, $alpha: 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed $primaryColor;
+    position: relative;
+    transition: 0.3s;
+
+    span {
+      position: absolute;
+      top: -7px;
+      left: 29px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background: #80c627;
+      border-radius: 25px;
+      font-size: 10px;
+      border: 2px solid white;
+    }
+    &:hover {
+      background-color: rgba($color: $primaryColor, $alpha: 0.2);
+    }
+  }
+}
+
+.header__signin-btn {
+  margin-left: 30px;
+
+  a {
+    img {
+      display: none;
+      @include maxBreakpoint($tabletLarge) {
+        display: block;
+      }
+    }
+    @include maxBreakpoint($tabletLarge) {
+      padding: 0;
+      width: 45px;
+      span {
+        font-size: 0;
+      }
+    }
+  }
+
+  @include maxBreakpoint($tabletLarge) {
+    margin-left: 10px;
+  }
+}
+
+.mobile-menu-toggle {
+  @include buttonReset;
+  margin-left: 20px;
+  @include minBreakpoint($tabletLarge) {
+    display: none;
+  }
+}

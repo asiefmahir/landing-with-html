@@ -1,0 +1,50 @@
+%btn {
+  outline: 0;
+  border: 0;
+  background: none;
+  appearance: none;
+  font-family: $font;
+  padding: 0 25px;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.btn-big {
+  @extend %btn;
+  height: 70px;
+  padding: 0 65px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.btn-green {
+  @extend %btn;
+  background: $primaryColor;
+  color: white;
+  &:hover {
+    background-color: lighten($color: $primaryColor, $amount: 5);
+  }
+}
+
+%btn-outline {
+  @extend %btn;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.btn-outline-green {
+  @extend %btn-outline;
+  border-color: $primaryColor;
+  color: $primaryColor;
+  transition: 0.3s;
+  &:hover {
+    background: $primaryColor;
+    color: white;
+    border: 1px solid transparent;
+  }
+}

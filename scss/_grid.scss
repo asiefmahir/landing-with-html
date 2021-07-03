@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  grid-gap: 30px;
+  &.one {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  &.two {
+    grid-template-columns: repeat(2, 1fr);
+    @include maxBreakpoint($mobilexLarge) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &.three {
+    grid-template-columns: repeat(3, 1fr);
+    @include maxBreakpoint($tabletLarge) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include maxBreakpoint($mobilexLarge) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &.four {
+    grid-template-columns: repeat(4, 1fr);
+    @include maxBreakpoint($tabletLarge) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include maxBreakpoint($mobilexLarge) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include maxBreakpoint($mobileLarge) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
